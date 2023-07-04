@@ -5,8 +5,8 @@ export default function BusinessList(props) {
     return (
         <ul>
             {
-                business.map((business) => {
-                    return <li><Business business={business}/></li>
+                business.map((business, i) => {
+                    return <li><Business key={'business' + i} business={business}/></li>
                 })
             }
         </ul>

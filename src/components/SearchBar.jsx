@@ -1,15 +1,19 @@
+import { useState } from "react";
+
 export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
     const [location, setLocation] = useState('');
     const [sortingOption, setSortingOption] = useState('');
 
     const handleSortOption = (sortOption) => {
+        return;
         // Handle sort option logic here
         // You can update the state or perform any other actions based on the selected sort option
       };
   
     const handleSearch = (e) => {
       e.preventDefault();
+      return;
       // Handle search logic here
       // You can make an API call to Yelp API with the search term and location
       // Use the formatting and naming conventions specified in the API documentation
