@@ -1,8 +1,19 @@
 form {
-    background-image: url('../../public/lily-banse--YHSwy6uqvk-unsplash.jpg');
+    background-image: url('../../public/tijana-drndarski-Us3QEwd9mBU-unsplash.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: scroll;
+    
+    
 }
+
+form::after {
+    background-color: black;
+    opacity: 0.8; /* Adjust the opacity (0.5 in this example) to control the darkness */
+    z-index: -1;
+}
+
+
 
 a {
     display:inline-block;
@@ -13,11 +24,9 @@ a {
     margin-top: 9rem; 
     cursor:pointer;
     font-size: 2rem;
-}
-
-a:link {
     color: white;
 }
+
 
 a:visited {
     color: white;
@@ -35,13 +44,31 @@ hr {
 input {
     padding-left: 3rem;
     padding-right: 3rem;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-top: 3rem; 
+    margin-top: 3rem;
+    border-radius: .5rem;
+    font-size: 2rem; 
+    border-style: hidden;
 }
 
 button {
   display: block;
-  margin: 2rem auto 4rem;
+  margin: 4rem auto 0;
+  background-color: #bb8830;
+  border-radius: .5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  color: white;
 
 }
+
+button:hover {
+    background-color: #8f661f;
+    transform: translateY(-1px);
+  }

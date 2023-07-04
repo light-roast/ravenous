@@ -28,20 +28,18 @@ export default function SearchBar() {
                 <hr></hr>
             </div>
             <input
-                name="Business"
                 type="text"
                 placeholder="Search businesses"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
             <input
-                name="Location"
                 type="text"
                 placeholder="Where?"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
             />
-             <button type="submit">Let's go</button>
+             <button type="submit">Let's Go</button>
         </form>
     );
 }
