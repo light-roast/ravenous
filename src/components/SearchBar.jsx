@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './searchBar.css'
 export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
     const [location, setLocation] = useState('');
@@ -21,9 +21,12 @@ export default function SearchBar() {
 
     return (
         <form>
-            <a onClick={() => handleSortOption('best_match')}>Best Match</a>
-            <a onClick={() => handleSortOption('rating')}>Highest Rated</a>
-            <a onClick={() => handleSortOption('review_count')}>Most Reviewed</a>
+            <div>
+                <a onClick={() => handleSortOption('best_match')}><p>Best</p><p>Match</p></a>
+                <a onClick={() => handleSortOption('rating')}><p>Highest</p><p>Rated</p></a>
+                <a onClick={() => handleSortOption('review_count')}><p>Most</p><p>Reviewed</p></a>
+                <hr></hr>
+            </div>
             <input
                 name="Business"
                 type="text"
@@ -34,11 +37,11 @@ export default function SearchBar() {
             <input
                 name="Location"
                 type="text"
-                placeholder="Location"
+                placeholder="Where?"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
             />
-             <button type="submit">Search</button>
+             <button type="submit">Let's go</button>
         </form>
     );
 }
