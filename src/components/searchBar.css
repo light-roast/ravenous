@@ -1,9 +1,7 @@
 form {
-    
-    background-size:contain;
-    background-repeat: no-repeat;
-    
-    background-position: center;
+    background-image: url(../../public/tijana-drndarski-Us3QEwd9mBU-unsplash.jpg);
+    background-size:300lvh;
+    background-position:265lvh;
     background-attachment: scroll;
     width: 100%;
     
@@ -25,7 +23,6 @@ a {
     margin-right: 2rem;
     margin-top: 9rem; 
     cursor:pointer;
-    font-size: 2rem;
     color: white;
 }
 
@@ -43,6 +40,10 @@ hr {
     margin: 0 auto;
 }
 
+p {
+    font-size: 1.7rem;
+}
+
 input {
     display: inline-block;
     padding-left: 3rem;
@@ -55,7 +56,7 @@ input {
     border-radius: .5rem;
     font-size: 150%; 
     border-style: hidden;
-    
+   
 }
 
 button {
