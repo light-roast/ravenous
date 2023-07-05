@@ -1,9 +1,11 @@
 form {
-    background-image: url('../../public/tijana-drndarski-Us3QEwd9mBU-unsplash.jpg');
-    background-size: cover;
+    
+    background-size:contain;
+    background-repeat: no-repeat;
+    
     background-position: center;
     background-attachment: scroll;
-    
+    width: 100%;
     
 }
 
@@ -37,11 +39,12 @@ a:hover {
 }
 
 hr {
-    width: 50rem;
+    width: 40%;
     margin: 0 auto;
 }
 
 input {
+    display: inline-block;
     padding-left: 3rem;
     padding-right: 3rem;
     padding-top: .6rem;
@@ -50,8 +53,9 @@ input {
     margin-right: 2rem;
     margin-top: 3rem;
     border-radius: .5rem;
-    font-size: 2rem; 
+    font-size: 150%; 
     border-style: hidden;
+    
 }
 
 button {

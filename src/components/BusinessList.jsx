@@ -1,5 +1,6 @@
 import Business from './Business';
 import business from './hardcoreBusiness';
+import './businessList.css';
 
 export default function BusinessList(props) {
     return (
@@ -11,4 +12,4 @@ export default function BusinessList(props) {
             }
         </ul>
     );
-};
+}
