@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import BusinessList from './components/BusinessList';
+import SearchBar from './components/SearchBar';
+import business from './components/hardcoreBusiness';
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      
+      <header>
+        <h1>ravenous</h1>
+      </header>
+      <SearchBar />
+      <BusinessList business={business}/>
     </>
   )
 }
