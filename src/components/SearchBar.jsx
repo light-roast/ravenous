@@ -3,7 +3,7 @@ import './searchBar.css'
 export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
     const [location, setLocation] = useState('');
-    const [sortingOption, setSortingOption] = useState('');
+    const [sortingOption, setSortingOption] = useState('no sorting option');
     const [activeLink, setActiveLink] = useState(false);
 
     useEffect(() => {
@@ -12,22 +12,19 @@ export default function SearchBar() {
         }
     }, [activeLink])
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(`Searching Yelp with ${searchTerm}, ${location}, ${sortingOption}`);
+    }
+
+
     const handleSortOption = (sortOption) => {
         setActiveLink(sortOption);
-        // Handle sort option logic here
-        // You can update the state or perform any other actions based on the selected sort option
-      };
-  
-    const handleSearch = (e) => {
-      e.preventDefault();
-      return;
-      // Handle search logic here
-      // You can make an API call to Yelp API with the search term and location
-      // Use the formatting and naming conventions specified in the API documentation
-    };
+          };
+
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
                 <a onClick={() => handleSortOption('best_match')} className={activeLink === 'best_match'? 'active': ''}><p>Best</p><p>Match</p></a>
                 <a onClick={() => handleSortOption('rating')} className={activeLink === 'rating'? 'active': ''}><p>Highest</p><p>Rated</p></a>
