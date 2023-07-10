@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './searchBar.css'
 export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
     const [location, setLocation] = useState('');
     const [sortingOption, setSortingOption] = useState('');
     const [activeLink, setActiveLink] = useState(false);
+
+    useEffect(() => {
+        if (activeLink) {
+            setSortingOption(activeLink);
+        }
+    }, [activeLink])
 
     const handleSortOption = (sortOption) => {
         setActiveLink(sortOption);
