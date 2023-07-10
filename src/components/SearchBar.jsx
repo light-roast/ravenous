@@ -4,9 +4,10 @@ export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
     const [location, setLocation] = useState('');
     const [sortingOption, setSortingOption] = useState('');
+    const [activeLink, setActiveLink] = useState(false);
 
     const handleSortOption = (sortOption) => {
-        return;
+        setActiveLink(sortOption);
         // Handle sort option logic here
         // You can update the state or perform any other actions based on the selected sort option
       };
@@ -22,9 +23,9 @@ export default function SearchBar() {
     return (
         <form>
             <div>
-                <a onClick={() => handleSortOption('best_match')}><p>Best</p><p>Match</p></a>
-                <a onClick={() => handleSortOption('rating')}><p>Highest</p><p>Rated</p></a>
-                <a onClick={() => handleSortOption('review_count')}><p>Most</p><p>Reviewed</p></a>
+                <a onClick={() => handleSortOption('best_match')} className={activeLink === 'best_match'? 'active': ''}><p>Best</p><p>Match</p></a>
+                <a onClick={() => handleSortOption('rating')} className={activeLink === 'rating'? 'active': ''}><p>Highest</p><p>Rated</p></a>
+                <a onClick={() => handleSortOption('review_count')} className={activeLink === 'review_count'? 'active': ''}><p>Most</p><p>Reviewed</p></a>
                 <hr></hr>
             </div>
             <input

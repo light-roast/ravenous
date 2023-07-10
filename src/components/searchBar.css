@@ -27,12 +27,9 @@ a {
 }
 
 
-a:visited {
-    color: white;
-}
 
 a:hover {
-    color: rgba(255, 255, 255, 0.829);
+    color: #684c1c;
 }
 
 hr {
@@ -76,4 +73,8 @@ button {
 button:hover {
     background-color: #8f661f;
     transform: translateY(-1px);
+  }
+
+a.active {
+    color: #8f661f;
   }
