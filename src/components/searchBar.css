@@ -24,12 +24,13 @@ a {
     margin-top: 9rem; 
     cursor:pointer;
     color: white;
+    font-weight: bold;
 }
 
 
 
 a:hover {
-    color: #684c1c;
+    color: #7e6335;
 }
 
 hr {
@@ -37,7 +38,7 @@ hr {
     margin: 0 auto;
 }
 
-p {
+a p {
     font-size: 1.7rem;
 }
 
@@ -76,5 +77,5 @@ button:hover {
   }
 
 a.active {
-    color: #8f661f;
+    color: #e0af5b;
   }

@@ -1,7 +1,12 @@
 ul {
     display: flex;
-    margin: 2rem;
+    margin: 2rem auto;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-between;
+    width: 100%;
+}
+
+li {
+    flex-basis: 22%;
 }

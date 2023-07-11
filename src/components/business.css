@@ -1,6 +1,9 @@
 img {
+    clip-path: inset(6rem 4.1rem 5rem 4.1rem);
+    margin: 0 auto;
     width: 100%;
-    
+    height: 100%;
+    transform: scale(1.5) translate(0, 0);
 }
 
 li {
@@ -8,11 +11,18 @@ li {
 }
 
 article {
-    width: 17rem;
-    height: 20rem;
-    margin: 5rem;
+    width: auto;
+    padding: 2rem;
+    margin: 2rem;
     height: auto;
 }
+
+article h4 {
+    margin-top: .5rem;
+    text-align: left;
+    font-size: 1.7rem;
+}
+
 
 h4 {
     font-size: 1.5rem;
@@ -27,7 +37,7 @@ h5 {
 #info {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items:end;
     
 }
 
@@ -35,10 +45,19 @@ h5 {
     text-align: left;
 }
 
-p {
-    font-size: 1rem;
+.right {
+    text-align: right;
+}
+
+section.left p {
+    font-size: 1.4rem;
+}
+
+section.right p {
+    font-size: 1.2rem;
 }
 
 .category {
     color: #bb8830;
 }
+
