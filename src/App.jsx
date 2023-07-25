@@ -17,7 +17,7 @@ function App() {
       <header>
         <h1>ravenous</h1>
       </header>
-      <SearchBar />
+      <SearchBar setSearchTerm={setSearchTerm} setLocation={setLocation} setSortingOption={setSortingOption}/>
       <BusinessList business={business}/>
     </>
   )

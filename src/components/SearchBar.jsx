@@ -1,40 +1,35 @@
 import { useEffect, useState } from "react";
 import './searchBar.css'
-export default function SearchBar() {
-    const [location, setLocation] = useState('');
-    const [sortingOption, setSortingOption] = useState('no');
+export default function SearchBar({setSearchTerm, setLocation, setSortingOption}) {
     const [activeLink, setActiveLink] = useState(false);
+    const [searchTerm, setSearchTeme] = useState('');
 
-    useEffect(() => {
-        if (activeLink) {
-            setSortingOption(activeLink);
-        }
-    }, [activeLink])
-
-    const handleSubmit = (e) => {
+       const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(`Searching Yelp with ${searchTerm}, ${location}, ${sortingOption}`);
+        }
+    
+    const handleCLick = (sortOption) =>  {
+        if (!activeLink) {
+            setActiveLink(sortOption);
+            setSortingOption(activeLink);
+        } else {
+            setActiveLink(false);
+            setSortingOption('no');
+        }
     }
-
 
     const handleSortOption = (sortOption) => {
         setActiveLink(sortOption);
-        if (sortOption === 'no') {
-            return;
-        } else if (sortOption === 'best_match' || sortOption === 'rating' || sortOption === 'review_count') {
-            setSortingOption(sortOption);
-        } else {
-            return;
-        }
+       
           };
 
 
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <a onClick={() => handleSortOption('best_match')} className={activeLink === 'best_match'? 'active': ''}><p>Best</p><p>Match</p></a>
-                <a onClick={() => handleSortOption('rating')} className={activeLink === 'rating'? 'active': ''}><p>Highest</p><p>Rated</p></a>
-                <a onClick={() => handleSortOption('review_count')} className={activeLink === 'review_count'? 'active': ''}><p>Most</p><p>Reviewed</p></a>
+                <a onClick={() => handleCLick('best_match')} className={activeLink === 'best_match'? 'active': ''}><p>Best</p><p>Match</p></a>
+                <a onClick={() => handleCLick('rating')} className={activeLink === 'rating'? 'active': ''}><p>Highest</p><p>Rated</p></a>
+                <a onClick={() => handleCLick('review_count')} className={activeLink === 'review_count'? 'active': ''}><p>Most</p><p>Reviewed</p></a>
                 <hr></hr>
             </div>
             <input
