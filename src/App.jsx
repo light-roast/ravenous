@@ -6,18 +6,13 @@ import yelp from '../src/utils/yelp';
 import { useState } from 'react';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('')
-  const [location, setLocation] = useState('');
-  const [sortingOption, setSortingOption] = useState('no');
-  
-
-
+  //Add logic to store separate search values in order to fetch after handlesubmit
   return (
     <>
       <header>
         <h1>ravenous</h1>
       </header>
-      <SearchBar setSearchTerm={setSearchTerm} setLocation={setLocation} setSortingOption={setSortingOption}/>
+      <SearchBar/>
       <BusinessList business={business}/>
     </>
   )
