@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import './searchBar.css'
 export default function SearchBar() {
-    const [searchTerm, setSearchTerm] = useState('');
     const [location, setLocation] = useState('');
     const [sortingOption, setSortingOption] = useState('no');
     const [activeLink, setActiveLink] = useState(false);
@@ -20,6 +19,13 @@ export default function SearchBar() {
 
     const handleSortOption = (sortOption) => {
         setActiveLink(sortOption);
+        if (sortOption === 'no') {
+            return;
+        } else if (sortOption === 'best_match' || sortOption === 'rating' || sortOption === 'review_count') {
+            setSortingOption(sortOption);
+        } else {
+            return;
+        }
           };
 
 
