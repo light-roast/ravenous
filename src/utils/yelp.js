@@ -1,13 +1,12 @@
-const key = "Bearer Mn9yza2R9TXDT4daolkizWR7h9WTRJPqdeW4ylfmxbMe9jpKbEmaIamW5cizEC1W4eTxVDwcO-GSh8N3sBZyzc8Dk7FbfC1XnZK-8vvR7djtdo0fpHBfL-Lgxt6_ZHYx";
-
-const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: key
-    }
-  };
-  async function yelp(searchTerm, location, sortOption){
+async function yelp(searchTerm, location, sortOption, api_key){
+    const key = `Bearer ${api_key}`;
+    const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: key
+        }
+      };
     try {
         const response = await fetch(`https://api.yelp.com/v3/businesses/search?location=${location}&term=${searchTerm}&sort_by=${sortOption}`, options);
         if (response.ok) {

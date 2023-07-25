@@ -3,7 +3,7 @@ import './searchBar.css'
 export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
     const [location, setLocation] = useState('');
-    const [sortingOption, setSortingOption] = useState('no sorting option');
+    const [sortingOption, setSortingOption] = useState('no');
     const [activeLink, setActiveLink] = useState(false);
 
     useEffect(() => {
