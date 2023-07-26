@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import './searchBar.css'
-export default function SearchBar() {
+export default function SearchBar({fetchResults}) {
     const [activeLink, setActiveLink] = useState(false);
     const [sortingOption, setSortingOption] = useState('no');
     const [searchTerm, setSearchTeme] = useState('');
@@ -9,6 +9,8 @@ export default function SearchBar() {
     //move this to App.jsx
     const handleSubmit = (e) => {
         e.preventDefault();
+        fetchResults(searchTerm, location, sortingOption);
+
     }
     
     const handleCLick = (sortOption) =>  {
@@ -39,7 +41,7 @@ export default function SearchBar() {
                 type="text"
                 placeholder="Search businesses"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => setSearchTeme(e.target.value)}
             />
             <input
                 type="text"
