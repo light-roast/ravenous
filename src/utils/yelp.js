@@ -9,7 +9,7 @@ async function yelp(searchTerm, location, sortOption, api_key){
       };
     try {
         if (sortOption === 'no') {
-            const response = await fetch(`https://api.yelp.com/v3/businesses/search?location=${location}&term=${searchTerm}`, options);
+            const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${location}&term=${searchTerm}`, options);
             if (response.ok) {
                 const jsonResponse = await response.json();
                 if (jsonResponse.businesses) {
@@ -48,6 +48,7 @@ async function yelp(searchTerm, location, sortOption, api_key){
                     reviewCount: business.review_count
                   }));
             }
+            console.log("props.business:", jsonResponse.business);
             
 
         }

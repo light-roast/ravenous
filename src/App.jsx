@@ -11,9 +11,10 @@ function App() {
 
 
   function fetchResults(term, loc, sort) {
-    const apiKey = process.env.VITE_API_KEY;
-    //Solve process problem //Difference dev and product?
+    const apiKey = import.meta.env.VITE_API_KEY;
+    //Solve problem with CROSS 
     setFetchedResults(yelp(term, loc, sort, apiKey));
+    console.log(fetchedResults);
   }
   
 
