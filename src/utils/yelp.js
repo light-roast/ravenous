@@ -1,4 +1,4 @@
-async function yelp(searchTerm, location, sortOption, api_key){
+export default async function yelp(searchTerm, location, sortOption, api_key){
     const key = `Bearer ${api_key}`;
     const urlWithSort = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${location}&term=${searchTerm}&sort_by=${sortOption}`;
     const url = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${location}&term=${searchTerm}`;
@@ -10,10 +10,11 @@ async function yelp(searchTerm, location, sortOption, api_key){
         }
       };
     try {
+        let response;
         if (sortOption === 'no') {
-            const response = await fetch(url, options);
+            response = await fetch(url, options);
         } else {
-            const rsponse = await fetch(urlWithSort, options);
+            response = await fetch(urlWithSort, options);
         }
         if (response.ok) {
             const jsonResponse = await response.json();
@@ -37,10 +38,9 @@ async function yelp(searchTerm, location, sortOption, api_key){
             }
             throw new Error ('Request failed'); 
         }         
-    }
+    
     catch(error) {
         console.log(error);
     }
-  }
- 
-  export default yelp;
+  
+}
