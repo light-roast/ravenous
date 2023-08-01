@@ -8,13 +8,13 @@ export default function BusinessList(props) {
         return <p>fetched failed...</p>; 
       } else {
         return (
-            <ul>
+            <section id="mainSection">
                 {
-                    props.business.map((business, i) => {
-                        return <li><Business key={'business' + i} business={business}/></li>
+                    props.business.map((business) => {
+                        return <Business key={business.id}  business={business}/>
                     })
                 }
-            </ul>
+            </section>
         );
       }
     

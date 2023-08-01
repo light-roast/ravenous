@@ -1,20 +1,20 @@
 import './App.css';
 import BusinessList from './components/BusinessList';
 import SearchBar from './components/SearchBar';
-import business from './components/hardcoreBusiness';
 import yelp from '../src/utils/yelp';
 import { useState } from 'react';
-
+import bis from './components/hardcoreBusiness';
+//Escuchar audios de Silva
 function App() {
-  const [fetchedResults, setFetchedResults] = useState([{}]);
+  const [fetchedResults, setFetchedResults] = useState([{id: 'key0'}]);
   
 
 
   function fetchResults(term, loc, sort) {
     const apiKey = import.meta.env.VITE_API_KEY;
-    //Solve problem with CROSS 
-    setFetchedResults(yelp(term, loc, sort, apiKey));
-    console.log(fetchedResults);
+    const results = yelp(term, loc, sort, apiKey);
+    setFetchedResults(results);
+    
   }
   
 
@@ -25,7 +25,7 @@ function App() {
         <h1>ravenous</h1>
       </header>
       <SearchBar fetchResults={fetchResults}/>
-      <BusinessList business={fetchedResults}/>
+      <BusinessList business={bis}/>
     </>
   )
 }

@@ -1,13 +1,17 @@
-ul {
+#mainSection {
     display: flex;
     margin: 2rem auto;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-between;
-    width: 80%;
+    width: 85%;
+    flex-shrink: 0;
 }
 
-li {
+.cards {
     flex-basis: 26%;
+    height: 90%;
+    flex-shrink: 0;
+    width: 26%;
     
 }

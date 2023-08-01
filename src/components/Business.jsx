@@ -1,34 +1,34 @@
 import './business.css';
 
-export default function Business(props) {
-   if (!props.hasOwnProperty("name")) {
+export default function Business({business}) {
+   if (!business.hasOwnProperty("name")) {
         return <article></article>;
     } else {
         return (
             <>
-                <article>
-                    <img src={props.business.imageSrc}/>
-                    <h4>
-                        {props.business.name}
+                <div className="cards">
+                    <img src={business.imageSrc}/>
+                    <h4 id="name">
+                        {business.name}
                     </h4>
                     <div id="info">
                         <section className='left'>
-                            <p>{props.business.address}</p>
-                            <p>{props.business.city}</p>
-                            <p>{props.business.state} {props.business.zipCode}</p>
+                            <p>{business.address}</p>
+                            <p>{business.city} </p>
+                            <p>{business.state} {business.zipCode}</p>
                         </section>
                         <section className='right'>
                             <h4 className="category">
-                                {props.business.category}
+                                {business.category}
                             </h4>
                             <h5 className="category">
-                                {props.business.rating}
+                                {business.rating} stars
                             </h5>
-                            <p>{props.business.reviewCount} reviews</p>
+                            <p>{business.reviewCount} reviews</p>
 
                         </section>
                     </div>
-                </article>
+                </div>
             </>
         )}
 }
