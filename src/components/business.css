@@ -1,16 +1,14 @@
 img {
     margin: 0 auto;
-    width: 80%;
-    height: 20%;
+    width: 100%;
+    
     }
 
-.cards {
-    border: white solid 1px;
-}
+
 
 .cards {
-    
-    margin: 1rem;
+    min-width: 26%;
+    margin: 1.7rem;
     
     
 }
