@@ -7,7 +7,9 @@ export default function Business({business}) {
         return (
             <>
                 <div className="cards">
-                    <img src={business.imageSrc}/>
+                    <div className='image-container'>
+                        <img src={business.imageSrc}/>
+                    </div>
                     <h4 id="name">
                         {business.name}
                     </h4>

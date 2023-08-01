@@ -1,20 +1,31 @@
 img {
-    margin: 0 auto;
+    height: 100%;
     width: 100%;
-    
+    object-fit:cover;
+    }
+
+.image-container {
+        margin: 0 auto;
+        width: auto; 
+        height: 250px;
+        overflow: hidden; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 
 
 .cards {
     min-width: 26%;
-    margin: 1.7rem;
+    margin: 1.9rem;
     
     
 }
 
 #name {
-    margin-top: .5rem;
+    margin-top: 1.9rem;
+    margin-bottom: 1.5rem;
     text-align: left;
     font-size: 1.7rem;
 }
