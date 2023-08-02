@@ -8,20 +8,20 @@ export default function Business({business}) {
             <>
                 <div className="cards">
                     <div className='image-container'>
-                        <img src={business.imageSrc}/>
+                        <img src={business.image_url}/>
                     </div>
                     <h4 id="name">
                         {business.name}
                     </h4>
                     <div id="info">
                         <section className='left'>
-                            <p>{business.address}</p>
-                            <p>{business.city} </p>
-                            <p>{business.state} {business.zipCode}</p>
+                            <p>{business.location.address1}</p>
+                            <p>{business.location.city} </p>
+                            <p>{business.location.state} {business.location.zipCode}</p>
                         </section>
                         <section className='right'>
                             <h4 className="category">
-                                {business.category}
+                                {business.categories[0].title}
                             </h4>
                             <h5 className="category">
                                 {business.rating} stars

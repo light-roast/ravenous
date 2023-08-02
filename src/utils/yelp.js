@@ -1,35 +1,32 @@
-export default async function yelp(searchTerm, location, sortOption, api_key){
-    const key = `Bearer ${api_key}`;
-    const urlWithSort = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${location}&term=${searchTerm}&sort_by=${sortOption}`;
-    const url = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${location}&term=${searchTerm}`;
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: key
-        }
-      };
-    try {
-        let response;
-        if (sortOption === 'no') {
-            response = await fetch(url, options);
-        } else {
-            response = await fetch(urlWithSort, options);
-        }
-        if (response.ok) {
-            const jsonResponse = await response.json();
-            if (jsonResponse.businesses) {
-                    let returnInfo = await jsonResponse.businesses;
-                    return returnInfo;
-                }
-                
-    
-            }
-            throw new Error ('Request failed'); 
-        }         
-    
-    catch(error) {
-        console.log(error);
-    }
+export default async function yelp(searchTerm, location, sortOption, api_key) {
+    const baseUrl = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search`;
+    const url = `${baseUrl}?location=${location}&term=${searchTerm}`;
+    const urlWithSort = `${baseUrl}?location=${location}&term=${searchTerm}&sort_by=${sortOption}`;
   
-}
+    const options = {
+      method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Authorization': api_key
+      },
+    };
+  
+    try {
+      const response = await fetch(sortOption === 'no' ? url : urlWithSort, options);
+      const data = await response.json();
+      
+      if (data.businesses && Array.isArray(data.businesses) && data.businesses.length > 0) {
+        return data.businesses;
+      } else {
+        
+        return [];
+      }
+    } catch (err) {
+      // Log and handle the error appropriately
+      console.error('Failed to fetch data from Yelp API:', err);
+      throw new Error('Failed to fetch data from Yelp API');
+    }
+  }
+  
+
+    
