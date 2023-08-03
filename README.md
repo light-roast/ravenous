@@ -57,31 +57,16 @@ The challenge consisted of building a web application that used the Yelp API to 
 
 Basic land page after a search is made looks like this in desktop screensize:
 ![Desktop size screenshot](./public/1.png)
-![Mobile size screenshot](./public/2.png)
-
-
-```html
-<video controls>
-    <source src="./public/showcase.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-```
-
-```js
-
-```
-
-```js
-
-```
+![Mobile size screenshot](./public/21.png)
+I'm not going to deploy the site on Netlify to avoid API key abuse, but here is a GIF of the working website:
+![Gif of the working app](./public/showcase.gif)
 
 ![](./public/web-snap.png)
 ![](./public/mobile-snap.png)
 
 ### Links
 
-- Solution URL: [GitHub repo](https://github.com/light-roast/calculateageapp)
-- Live Site URL: [Live Site](https://calculate-your-real-age.netlify.app/)
+- Solution URL: [GitHub repo](https://github.com/light-roast/ravenous)
 
 ## My process
 
@@ -95,77 +80,20 @@ Basic land page after a search is made looks like this in desktop screensize:
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles.
 - New Date() object.
+- Vite react create -> Runs with `nmp run dev`.
+- .env file gitignored that contains the API key. If you want to fork this and make it work you have to create your own API key at Yelp and store in a root .env file following this patter: `VITE_API_KEY= "Bearer api-key-here"`.
 
 ### What I learned
 
-I learned a lot while completing this project. Handling numerous form interactions, especially checking for leap years, allowed me to create an interesting function. Using just React.js and CSS to style error validations instead of relying on default HTML validations was a major challenge, but I learned a lot by successfully doing so.
-
-Calculating the real age was surprisingly difficult for me at first. I had to watch multiple YouTube videos on how to calculate age in years, months, and days to come up with a JS solution using React. State management with `useState()` and `useEffect()` were key components of this solution.
-
-This is the leap year check:
-
-```js
- useEffect(() => {
-        
-        if ((0 === year % 4) && (0 !== year % 100) || (0 === year % 400)) {
-            setDaysInMonth(prevDaysInMonth => {
-                const updatedDaysInMonth = [...prevDaysInMonth]; 
-                updatedDaysInMonth[1] = 29;
-                return updatedDaysInMonth;
-              });
-        } else {
-            setDaysInMonth(prevDaysInMonth => {
-                const updatedDaysInMonth = [...prevDaysInMonth]; 
-                updatedDaysInMonth[1] = 28;
-                return updatedDaysInMonth;
-        });
-          };
-
-        
-    }, [year]);
-```
-
-And this is the real age calculation function:
-
-```js
-function calculateRealAge(year, month, day, monthArr) {
-    const actualDate = new Date();
-    let d = actualDate.getDate();
-    let m = actualDate.getMonth()+1;
-    console.log(m);
-    let y = actualDate.getFullYear();
-      
-    if (d < day) {
-      m--;
-      let actualDays = d + (monthArr[m+1]);
-      let realDays = actualDays - day;
-      setDays(realDays);
-    } else {
-      let realDays = d - day;
-      setDays(realDays);
-    }
-
-    if (m < month) {
-      y--;
-      m += 12;
-      let realMonths = m - month;
-      setMonths(realMonths);
-    } else {
-      let realMonths = (m - month);
-      setMonths(realMonths);
-    }
-  
-    setYears(y-year);
-  };
-```
+"My most authentic learning experience with this project was learning to develop using a private API like Yelp's. In this company, they have the ways to make API calls very well documented. However, CORS restrictions gave me some headaches, especially because I couldn't find in any available help material that the header should be specified with this information: `Access-Control-Allow-Origin': '*` (see yelp.js in wich I handle the logic to fetch from Yelp API -> `./src/utils/yels.ys`). To discover this, I had the help of my reliable and kind friend, who is also a senior full-stack developer. I will acknowledge him in the [acknowledgments section](#acknowledgments)."
 
 ### Continued development
 
-I would like to see a solution for this project that uses only flexbox, since I still struggle a bit with its usage. Additionally, I want to learn the basics of testing for this kind of React app, specifically guided by the question: what should I test in this specific app?
+I want to learn the basics of testing for this kind of React app, specifically guided by the question: what should I test in this specific app?
 
 ### Useful resources
 
-- [YouTube video tutorial to calculate real age](https://www.youtube.com/watch?v=zKhOOkUEw5U) - This video helped me to understand te basic math calculations to return the real age in days, months and years.
+- [Yelp API documentation](https://docs.developer.yelp.com/docs/fusion-intro)
 
 ## Author
 
@@ -175,5 +103,5 @@ I would like to see a solution for this project that uses only flexbox, since I 
 
 ## Acknowledgments
 
-- [Juan Sebastián Silva](https://github.com/juansesilva) helped me with his expert feedback on the app's behavior and responsive design. He also helped me understand how to correctly import the icon image into the Vite React project so that it builds successfully.
+- [Juan Sebastián Silva](https://github.com/juansesilva) helped me with his expert feedback on the app's behavior and responsive design. He also guided me on how to correctly fetch data from the Yelp API by setting the header of the request correctly.
 
