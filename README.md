@@ -55,11 +55,12 @@ The challenge consisted of building a web application that used the Yelp API to 
 
 ### Screenshots and videos
 
-Basic land page after a search is made looks like this in desktop screensize:
-![Desktop size screenshot](./public/1.png)
-![Mobile size screenshot](./public/21.png)
 I'm not going to deploy the site on Netlify to avoid API key abuse, but here is a GIF of the working website:
 ![Gif of the working app](./public/showcaseee.gif)
+
+Basic landpage after a search is made looks like this in desktop screensize:
+![Desktop size screenshot](./public/1.png)
+![Mobile size screenshot](./public/21.png)
 
 ![](./public/web-snap.png)
 ![](./public/mobile-snap.png)
