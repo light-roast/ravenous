@@ -19,6 +19,7 @@ img {
 .cards {
     min-width: 26%;
     margin: 1.9rem;
+    border: rgb(141, 135, 135) solid 1px;
     
     
 }
