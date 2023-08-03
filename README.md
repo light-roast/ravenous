@@ -57,9 +57,15 @@ The challenge consisted of building a web application that used the Yelp API to 
 
 Basic land page after a search is made looks like this in desktop screensize:
 ![Desktop size screenshot](./public/1.png)
-<div style="text-align: center;">
 ![Mobile size screenshot](./public/2.png)
-</div>
+
+
+```html
+<video controls>
+    <source src="./public/showcase.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+```
 
 ```js
 

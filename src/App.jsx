@@ -3,7 +3,7 @@ import BusinessList from './components/BusinessList';
 import SearchBar from './components/SearchBar';
 import yelp from '../src/utils/yelp';
 import { useState } from 'react';
-import bis from './components/hardcoreBusiness';
+
 
 function App() {
   const [fetchedResults, setFetchedResults] = useState([{id: 'key0'}]);
