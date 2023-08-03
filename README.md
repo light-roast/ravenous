@@ -24,7 +24,7 @@ This is a solution to the [Ravenous project at codecademy](https://www.codecadem
 
 ### The challenge
 
-The challenge consisted of building a web application that used the Yelp API to display and recommend all kinds of businesses, especially restaurants, mostly within the United States. Using a tech stack that includes HTML, CSS, JavaScript, React, and the Yelp API, the idea was to create an application that replicates the core functionality of [Yelp](https://www.yelp.com/). 
+The challenge consisted of building a web application that used the Yelp API to display and recommend all kinds of businesses, especially restaurants, mostly within the United States. Using a tech stack that includes HTML, CSS, JavaScript, React, and the Yelp API, the idea was to create an application that replicates the core functionality of [Yelp](https://www.yelp.com/).
 
 ### Project Requirements (as shown in Codecademy):
 
@@ -32,10 +32,10 @@ The challenge consisted of building a web application that used the Yelp API to 
 - Utilize HTML, CSS, and JavaScript as part of the tech stack.
 - Version control your application with Git and host the repository on GitHub.
 - Write a README (using Markdown) that documents your project, including:
-  - The purpose of your project.
-  - Technologies used.
-  - Features.
-  - Future work.
+   - The purpose of your project.
+   - Technologies used.
+   - Features.
+   - Future work.
 
 #### Features
 
@@ -59,7 +59,7 @@ Basic land page after a search is made looks like this in desktop screensize:
 ![Desktop size screenshot](./public/1.png)
 ![Mobile size screenshot](./public/21.png)
 I'm not going to deploy the site on Netlify to avoid API key abuse, but here is a GIF of the working website:
-![Gif of the working app](./public/showcase.gif)
+![Gif of the working app](./public/showcasee.gif)
 
 ![](./public/web-snap.png)
 ![](./public/mobile-snap.png)
