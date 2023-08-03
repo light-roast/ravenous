@@ -17,6 +17,9 @@ export default function SearchBar({fetchResults}) {
         if (!activeLink) {
             setActiveLink(sortOption);
             setSortingOption(sortOption);
+        } else if (activeLink !== sortOption) {
+            setActiveLink(sortOption);
+            setSortingOption(sortOption);
         } else {
             setActiveLink(false);
             setSortingOption('no');
