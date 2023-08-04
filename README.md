@@ -55,7 +55,7 @@ The challenge consisted of building a web application that used the Yelp API to 
 
 ### Screenshots and videos
 
-I'm not going to deploy the site on Netlify to avoid API key abuse, but here is a GIF of the working website:
+I'm not going to deploy the site on Netlify to avoid API key abuse, but here is a GIF of the working website (it can be found in public/preview.gif):
 ![Gif of the working app](./public/preview.gif)
 
 Basic landpage after a search is made looks like this in desktop screensize:
